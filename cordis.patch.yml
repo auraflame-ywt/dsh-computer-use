@@ -1,0 +1,4 @@
+# Computer-use bundle: a bundle patch inserted over the current profile.
+- insert:
+    - id: computer-use-windows
+      name: '@liuxinye/dsh-computer-use'

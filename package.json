@@ -1,0 +1,58 @@
+{
+  "name": "@liuxinye/dsh-computer-use",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Windows desktop control, screenshots, screen recording and Chromium automation as DeepSeek Harness tools. Uses the built-in Windows PowerShell for desktop automation and CDP for Chrome/Edge.",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "lib/*.ps1",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "author": "liuxinye",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auraflame-ywt/dsh-computer-use.git"
+  },
+  "homepage": "https://github.com/auraflame-ywt/dsh-computer-use#readme",
+  "bugs": {
+    "url": "https://github.com/auraflame-ywt/dsh-computer-use/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.1-rc.3 <1.0.0"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "automation",
+    "windows",
+    "computer-use",
+    "screenshot",
+    "uiautomation",
+    "chromium",
+    "cdp"
+  ],
+  "scripts": {
+    "test": "node --check index.js && for f in lib/*.js; do node --check \"$f\"; done && node test/basic.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
